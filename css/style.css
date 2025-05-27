@@ -257,18 +257,21 @@ nav ul li a.active::after {
 /* PRODUCTOS */
 .productos-title,
 .resenas-title,
-.contacto-title,.visitanos {
+.contacto-title,
+.visitanos {
     font-size: 2.7rem;
     justify-content: start;
     align-self: start;
     display: flex;
 }
-.visitanos{
+
+.visitanos {
     display: flex;
     font-size: 2.2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
 }
+
 .wrapp-libros {
     display: flex;
     flex-direction: column;
@@ -477,24 +480,76 @@ nav ul li a.active::after {
     color: var(--main-color);
     letter-spacing: 3px;
 }
-.video-container{
+
+.video-container {
     margin-top: 1rem;
 }
-.video-container video{
+
+.video-container video {
     width: 100%;
     border-radius: 10px;
 }
-.bi-arrow-up-right{
+
+.bi-arrow-up-right {
     margin-left: .5rem;
-    color:  #148e92;
+    color: #148e92;
     transition: color 0.3s ease-in-out;
 }
-.ubicacion{
+
+.ubicacion {
     letter-spacing: 1px;
 }
+
 .bi-arrow-up-right:hover {
-    color:var(--main-text); 
+    color: var(--main-text);
 }
+
+/* FOOTER */
+.footer {
+    border-top: 1px solid var(--main-text);
+    display: flex;
+    flex-direction: column;
+    color: var(--main-text);
+    padding-right: .5rem;
+    padding-left: .5rem;
+    justify-content: center;
+    align-self: center;
+}
+
+.social-media ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.logo-footer {
+    width: 22px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: .3rem;
+
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+}
+
+.footer-text {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--ff-title);
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
 @media (min-width:768px) and (max-width:1199px) {
 
     /* hero */
@@ -735,9 +790,15 @@ nav ul li a.active::after {
 
     .contacto-form input,
     .contacto-form textarea {
-
-
         width: 500px;
     }
 
+    /* FOOTER */
+    .logo-footer {
+        width: 30px;
+    }
+
+    .social-media ul {
+        font-size: 1.5rem;
+    }
 }
