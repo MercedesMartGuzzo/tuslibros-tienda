@@ -16,7 +16,7 @@
 
             <nav>
                 <div class="logo">
-                    <a href="#" class="logo-link">
+                    <a href="#inicio" class="logo-link">
                         <img src="./img/circulo-beiah.png" alt="Logo">
                     </a>
                 </div>
@@ -25,6 +25,8 @@
                     <li><a href="#productos">PRODUCTOS</a></li>
                     <li><a href="#resenas">RESEÑAS</a></li>
                     <li><a href="#contacto">CONTACTO</a></li>
+                    <li class="cart"><a href="./pages/carrito.html"><i class="bi bi-basket-fill"></i> <span class="span">0</span></a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -33,160 +35,123 @@
     <main>
         <section class="hero container">
             <div>
-                <h1 class="main-title">TUS LIBROS</h1>
+                <h1 class="main-title">TUS COMPRAS</h1>
             </div>
             <div class="hero-intro">
-                <p class="hero-p">Bienvenidos a la mejor tienda de libros online, lo que busques, este es el lugar</p>
+                <p class="hero-p">Bienvenidos a la mejor tienda de productos online, lo que busques, este es el lugar</p>
             </div>
 
         </section>
         <section class="productos container" id="productos">
-            <div>
-                <h2 class="productos-title">PRODUCTOS
-                    <span class="circle extra"></span>
-                </h2>
-            </div>
-            <div class="wrapp-libros">
-                <div class="card-libro">
-                    <img class="card-img fade-in" src="./img/libro1.jpeg" alt="libro1">
-                    <div class="detalles n">
-                        <h3 class="card-title"> La Naranja Mecánica</h3>
-                        <p class="card-description"> Una novela provocadora y distópica que explora la violencia, el
-                            libre albedrío y la manipulación del comportamiento humano.</p>
-                        <button class="card-button">VER MAS</button>
+            <section class="productos container" id="productos">
+                <div>
+                    <h2 class="productos-title">PRODUCTOS
+                        <span class="circle extra"></span>
+                    </h2>
+                </div>
+                <div class="wrapp-libros" id="productos-container"></div>
+            </section>
+            <section class="resenas container" id="resenas">
+                <div>
+                    <h2 class="resenas-title">RESEÑAS
+                        <span class="circle extra"></span>
+                    </h2>
+                </div>
+                <div class="wrapp-resenas">
+                    <div class="card-resena">
+                        <div>
+                            <p class="resena-author">Juan Pérez</p>
+                        </div>
+                        <p class="resena-text">"Siempre encuentro perfumes únicos y la atención es excelente."</p>
+
+                        <div class="resena-rating">
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="card-resena">
+                        <div>
+                            <p class="resena-author"> María López</p>
+                        </div>
+                        <p class="resena-text">"Unatienda con alma, perfecta para enctrar lo que necesites."</p>
+
+                        <div class="resena-rating">
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-resena">
+                        <div>
+                            <p class="resena-author"> Carlos García</p>
+                        </div>
+                        <p class="resena-text">"Tus Compras es mi lugar favorito para descubrir nuevos cosméticos."</p>
+                        <div class="resena-rating">
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+                            <i class="bi bi-emoji-smile-fill"></i>
+
+                        </div>
                     </div>
                 </div>
-
-                <div class="card-libro">
-                    <img class="card-img fade-in" src="./img/libro2.jpeg" alt="libro2">
-                    <div class="detalles">
-                        <h3 class="card-title">El Perfume</h3>
-                        <p class="card-description">Un thriller fascinante sobre un joven con un olfato extraordinario
-                            que busca crear el perfume perfecto, cueste lo que cueste. </p>
-                        <button class="card-button">VER MAS</button>
+            </section>
+            <section class="contacto container" id="contacto">
+                <div>
+                    <h2 class="contacto-title">CONTACTO
+                    </h2>
+                </div>
+                <div class="contacto-form">
+                    <form action="https://formspree.io/f/xanogved" method="POST">
+                        <div class="name">
+                            <label for="name">Nombre </label>
+                            <input type="text" id="name" name="name" placeholder="Esribe tu nombre" required>
+                        </div>
+                        <div class="email">
+                            <label for="email">Email </label>
+                            <input type="email" id="email" name="email" placeholder="Escribe tu email" required>
+                        </div>
+                        <div class="message">
+                            <label for="message">Mensaje </label>
+                            <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje"
+                                required></textarea>
+                        </div>
+                        <div>
+                            <button class="submit-button" type="submit">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="libreria-wrapp">
+                    <h2 class="visitanos">VISITANOS</h2>
+                    <h3 class="ubicacion">Estamos ubicados Av Callao 470, CABA <a
+                            href="https://maps.app.goo.gl/WZXhcJ3F9Hn65D9D9" target="_blank"><i
+                                class="bi bi-arrow-up-right"></i></a></h3>
+                    <div class="grid-visitanos">
+                        <div class="video-container">
+                            <video controls autoplay loop muted src="./img/cafeteria2.mp4"
+                                type="video/mp4"></video>
+                        </div>
+                        <div class="foto1"><img src="./img/cafeteria.jpg" alt=""></div>
+                        <div class="foto2"><!-- <img src="./img/library-2665338_1280.jpg" alt=""> -->
+                            <h3>TE ESPERAMOS</h3>
+                            <p>DE 9HS A 18HS /LUNES A VIERNES</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="card-libro">
-                    <img class="card-img fade-in" src="./img/libro5.jpeg" alt="libro3">
-                    <div class="detalles">
-                        <h3 class="card-title"> 1984</h3>
-                        <p class="card-description">Una distopía impactante sobre un régimen totalitario que controla
-                            cada pensamiento y cada acto de sus ciudadanos. </p>
-                        <button class="card-button">VER MAS</button>
-                    </div>
-                </div>
-
-                <div class="card-libro">
-                    <img class="card-img fade-in" src="./img/libro4.jpeg" alt="libro4">
-                    <div class="detalles a">
-                        <h3 class="card-title">Alicia en el país de las maravillas</h3>
-                        <p class="card-description">Un clásico de la fantasía que sigue a Alicia en una aventura
-                            surrealista por un mundo lleno de personajes curiosos y situaciones insólitas. </p>
-                        <button class="card-button">VER MAS</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="resenas container" id="resenas">
-            <div>
-                <h2 class="resenas-title">RESEÑAS
-                    <span class="circle extra"></span>
-                </h2>
-            </div>
-            <div class="wrapp-resenas">
-                <div class="card-resena">
-                    <div>
-                        <p class="resena-author">Juan Pérez</p>
-                    </div>
-                    <p class="resena-text">"Siempre encuentro títulos únicos y la atención es excelente."</p>
-
-                    <div class="resena-rating">
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-
-                    </div>
-                </div>
-
-                <div class="card-resena">
-                    <div>
-                        <p class="resena-author"> María López</p>
-                    </div>
-                    <p class="resena-text">"Una librería con alma, perfecta para perderse entre libros."</p>
-
-                    <div class="resena-rating">
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                    </div>
-                </div>
-
-                <div class="card-resena">
-                    <div>
-                        <p class="resena-author"> Carlos García</p>
-                    </div>
-                    <p class="resena-text">"Tus Libros es mi lugar favorito para descubrir nuevas lecturas."</p>
-                    <div class="resena-rating">
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                        <i class="bi bi-emoji-smile-fill"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="contacto container" id="contacto">
-            <div>
-                <h2 class="contacto-title">CONTACTO
-                </h2>
-            </div>
-            <div class="contacto-form">
-                <form action="https://formspree.io/f/xanogved" method="POST">
-                    <div class="name">
-                        <label for="name">Nombre </label>
-                        <input type="text" id="name" name="name" placeholder="Esribe tu nombre" required>
-                    </div>
-                    <div class="email">
-                        <label for="email">Email </label>
-                        <input type="email" id="email" name="email" placeholder="Escribe tu email" required>
-                    </div>
-                    <div class="message">
-                        <label for="message">Mensaje </label>
-                        <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje"
-                            required></textarea>
-                    </div>
-                    <div>
-                        <button class="submit-button" type="submit">ENVIAR</button>
-                    </div>
-                </form>
-            </div>
-            <div class="libreria-wrapp">
-                <h2 class="visitanos">VISITANOS</h2>
-                <h3 class="ubicacion">Estamos ubicados Av Callao 470, CABA <a
-                        href="https://maps.app.goo.gl/WZXhcJ3F9Hn65D9D9" target="_blank"><i
-                            class="bi bi-arrow-up-right"></i></a></h3>
-                <div class="grid-visitanos">
-                    <div class="video-container">
-                        <video controls autoplay loop muted src="./img/1310-145386665_small.mp4"
-                            type="video/mp4"></video>
-                    </div>
-                    <div class="foto1"><img src="./img/books-5211309_1280.jpg" alt=""></div>
-                    <div class="foto2"><!-- <img src="./img/library-2665338_1280.jpg" alt=""> -->
-                        <h3>TE ESPERAMOS</h3>
-                        <p>DE 9HS A 18HS /LUNES A VIERNES /</p>
-                </div>
-            </div>
-            </div>
-        </section>
+            </section>
     </main>
     <footer class="footer">
         <div class="footer-content">
-            <div class="logo-footer">
-                <img src="./img/circulo-beiah.png" alt="Logo">
+            <div class="logo-footer" id="inicio">
+                <a href="#">
+                    <img src="./img/circulo-beiah.png" alt="Logo"></a>
             </div>
             <div class="social-media">
                 <ul>
