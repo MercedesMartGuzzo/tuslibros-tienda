@@ -104,3 +104,34 @@ function actualizarCarritoUI() {
 }
 
 actualizarCarritoUI();
+
+
+/* FORMULARIO */
+
+
+  const formulario = document.getElementById('formulario');
+
+  formulario.addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita que recargue la página
+
+    const datos = new FormData(formulario);
+
+    fetch("https://formspree.io/f/xanogved", {
+      method: "POST",
+      body: datos,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        window.location.href = "https://mercedesmartguzzo.github.io/tuslibros-tienda/pages/gracias.html";
+      } else {
+        alert("Hubo un error al enviar. Intentá más tarde.");
+      }
+    })
+    .catch(error => {
+      alert("Error de conexión. Intentalo de nuevo.");
+    });
+  });
+
