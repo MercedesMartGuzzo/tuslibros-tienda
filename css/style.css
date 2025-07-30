@@ -598,6 +598,7 @@ nav ul li a:hover::after {
     gap: 1rem;
     margin-top: 4rem;
     margin-bottom: 2rem;
+    min-height: 100vh;
 }
 
 #carrito-items {
@@ -624,7 +625,37 @@ nav ul li a:hover::after {
     margin-top: 1rem;
 
 }
-
+/* GRACIAS */
+.thanks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+.thanks-title{
+    margin-bottom: 2rem;
+}
+.thanks p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: var(--ff-text);
+    margin-bottom: 1rem;
+}
+.thanks-btn{
+    font-family: var(--ff-title);
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.thanks-btn:hover {
+    color: #148e92;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    text-transform:uppercase;
+}
 /* FOOTER */
 .footer {
     border-top: 1px solid var(--main-text);
