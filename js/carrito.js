@@ -18,7 +18,7 @@ function renderCarrito() {
         const div = document.createElement('div');
         div.classList.add('carrito-item');
         div.innerHTML = `
-            <img src="${item.img}" alt="${item.title}" width="60">
+            <img src="${item.img}" alt="${item.title}">
             <div>
                 <h4>${item.title}</h4>
                 <p>$${item.price} x ${item.quantity}</p>
@@ -38,6 +38,22 @@ contenedor.addEventListener('click', e => {
     if (e.target.classList.contains('eliminar-btn')) {
         const id = e.target.dataset.id;
         carrito = carrito.filter(item => item.id !== id);
+
+        Toastify({
+            text: `¡Producto eliminado!`,
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            style: {
+                background: "#efd1c3",
+                color: "#024244",
+                fontFamily: "Dela Gothic One",
+                borderRadius: "10px",
+                fontWeight: "bold",
+                fontSize: "14px"
+            }
+        }).showToast();
+
         localStorage.setItem('carrito', JSON.stringify(carrito));
         renderCarrito();
     }
@@ -45,8 +61,26 @@ contenedor.addEventListener('click', e => {
 
 btnFinalizar.addEventListener('click', () => {
     if (carrito.length > 0) {
-        alert('¡Gracias por tu compra!');
+        /*   alert('¡Gracias por tu compra!'); */
+
         carrito = [];
+
+        Toastify({
+            text: `¡Gracias por tu compra!`,
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            style: {
+                background: "#efd1c3",
+                color: "#024244",
+                fontFamily: "Dela Gothic One",
+                borderRadius: "10px",
+                fontWeight: "bold",
+                fontSize: "14px"
+            }
+        }).showToast();
+
+
         localStorage.removeItem('carrito');
         renderCarrito();
     }

@@ -1,21 +1,21 @@
 
 /* CIRCULOS PRODUCTOS */
 document.addEventListener("DOMContentLoaded", () => {
-    const title = document.querySelector('.productos-title');
+  const title = document.querySelector('.productos-title');
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                title.classList.add('animate');
-            } else {
-                title.classList.remove('animate');
-            }
-        });
-    }, {
-        threshold: 0.1
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        title.classList.add('animate');
+      } else {
+        title.classList.remove('animate');
+      }
     });
+  }, {
+    threshold: 0.1
+  });
 
-    observer.observe(title);
+  observer.observe(title);
 });
 
 
@@ -92,6 +92,23 @@ function agregarAlCarrito(producto) {
   } else {
     carrito.push(producto);
   }
+  
+  Toastify({
+  text: `¡Prodcucto agregado al carrito!`,
+  duration: 3000,
+  gravity: "top",
+  position: "right",
+  style: {
+    background:"#efd1c3",
+    color:"#024244",
+    fontFamily:"Dela Gothic One",
+    borderRadius: "10px",
+    fontWeight: "bold",
+    fontSize: "14px"
+  }
+}).showToast();
+
+
 
   localStorage.setItem('carrito', JSON.stringify(carrito));
   actualizarCarritoUI();
@@ -109,20 +126,20 @@ actualizarCarritoUI();
 /* FORMULARIO */
 
 
-  const formulario = document.getElementById('formulario');
+const formulario = document.getElementById('formulario');
 
-  formulario.addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita que recargue la página
+formulario.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-    const datos = new FormData(formulario);
+  const datos = new FormData(formulario);
 
-    fetch("https://formspree.io/f/xanogved", {
-      method: "POST",
-      body: datos,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
+  fetch("https://formspree.io/f/xanogved", {
+    method: "POST",
+    body: datos,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
     .then(response => {
       if (response.ok) {
         window.location.href = "https://mercedesmartguzzo.github.io/tuslibros-tienda/pages/gracias.html";
@@ -133,5 +150,5 @@ actualizarCarritoUI();
     .catch(error => {
       alert("Error de conexión. Intentalo de nuevo.");
     });
-  });
+});
 
